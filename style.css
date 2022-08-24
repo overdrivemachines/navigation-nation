@@ -1,12 +1,21 @@
+/* https://colorhunt.co/palette/5132527a4069ca4e79ffc18e */
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 :root {
-  --primaryColor: #fff;
+  /*--primaryColor: #fff;
   --navColor1: #21292c;
   --navColor2: #aa3e39;
   --navColor3: #aa6e39;
   --navColor4: #236267;
-  --navColor5: #2c8437;
+  --navColor5: #2c8437;*/
+
+  --primaryColor: #fff;
+  --navColor1: #513252;
+  --navColor2: #7A4069;
+  --navColor3: #CA4E79;
+  --navColor4: #FFC18E;
+  --navColor5: #FF9551;
 }
 
 html {
@@ -16,11 +25,100 @@ html {
 body {
   margin: 0;
   background: #000;
+  font-family: Nunito, sans-serif;
 
 }
 
 /* --- Navigation Menu ------------------------------ */
 
+/* Overlay */
+.overlay {
+  /*Always be on the same spot of the page regardless of scroll*/
+  position: fixed;
+
+  /*Above everything else on our page. By default everything has a z-index of 1*/
+  z-index: 9;
+
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Nav Menu Items */
+nav, nav ul {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  /* stretch to fit the width of page */
+  justify-content: stretch;
+
+  /* Remove bullet points */
+  list-style: none;
+}
+
+nav ul li {
+  height: 20%;
+  /*do not stretch page horizontally and prevent horizontal scroll bar*/
+  overflow: hidden;
+}
+
+nav li a {
+  position: relative;
+  top: 45%;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+nav li a:hover {
+  /*Make 20% bigger*/
+  transform: scale(1.2);
+}
+
+/*add content before 'a' element*/
+nav li a::before {
+  /*do not add any text*/
+  content: "";
+  /*draw a line*/
+  width: 25vw;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  opacity: 0;
+}
+
+nav li a:hover::before {
+  opacity: 1;
+}
+
+nav li:nth-of-type(1) {
+  background-color: var(--navColor1);
+}
+nav li:nth-of-type(2) {
+  background-color: var(--navColor2);
+}
+nav li:nth-of-type(3) {
+  background-color: var(--navColor3);
+}
+nav li:nth-of-type(4) {
+  background-color: var(--navColor4);
+}
+nav li:nth-of-type(5) {
+  background-color: var(--navColor5);
+}
 
 
 /* --- Menu Bars ------------------------------------ */
