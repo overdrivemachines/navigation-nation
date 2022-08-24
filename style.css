@@ -1,6 +1,6 @@
 /* https://colorhunt.co/palette/5132527a4069ca4e79ffc18e */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 :root {
   /*--primaryColor: #fff;
@@ -12,10 +12,10 @@
 
   --primaryColor: #fff;
   --navColor1: #513252;
-  --navColor2: #7A4069;
-  --navColor3: #CA4E79;
-  --navColor4: #FFC18E;
-  --navColor5: #FF9551;
+  --navColor2: #7a4069;
+  --navColor3: #ca4e79;
+  --navColor4: #ffc18e;
+  --navColor5: #ff9551;
 }
 
 html {
@@ -26,7 +26,6 @@ body {
   margin: 0;
   background: #000;
   font-family: Nunito, sans-serif;
-
 }
 
 /* --- Navigation Menu ------------------------------ */
@@ -44,10 +43,25 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
+  /* Full width of the screen off of the page */
+  transform: translateX(-100vw);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  /* Bring overlay into view */
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  /* Bring overlay into view */
+  transform: translateX(-100vw);
 }
 
 /* Nav Menu Items */
-nav, nav ul {
+nav,
+nav ul {
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -119,7 +133,6 @@ nav li:nth-of-type(4) {
 nav li:nth-of-type(5) {
   background-color: var(--navColor5);
 }
-
 
 /* --- Menu Bars ------------------------------------ */
 
